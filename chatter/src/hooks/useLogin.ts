@@ -1,6 +1,7 @@
 import { useState } from "react";
 import client from "../constants/apollo-client";
 import { API_URL } from "../constants/urls";
+import { UNKOWN_ERROR_MESSAGE } from "../constants/error";
 
 interface LoginRequest{
     email: string,
@@ -22,7 +23,7 @@ const useLogin = () => {
                 setError('Credential invalid')
             }
             else{
-                setError('Unkown Error')
+                setError(UNKOWN_ERROR_MESSAGE)
             }
             return;
         }
